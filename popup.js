@@ -9,8 +9,14 @@
       //}
    // }
   //)
-  chrome.window.onload = function(){
-    Text.getElementById("popup.html").onload=function(){
+//   chrome.window.onload = function(){
+//     Text.getElementById("popup.html").onload = function(){
+//         alert("propaganda");
+//     }
+//    }
+
+document.body.onload = function() {
+    Text.getElementById("popup.html").onload = function(){
         alert("propaganda");
     }
 }
