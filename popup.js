@@ -9,14 +9,8 @@
       //}
    // }
   //)
-//   chrome.window.onload = function(){
-//     Text.getElementById("popup.html").onload = function(){
-//         alert("propaganda");
-//     }
-//    }
 
-document.body.onload = function() {
-    Text.getElementById("popup.html").onload = function(){
-        alert("propaganda");
-    }
+window.onload = function() {
+    var popup = document.getElementById("");
+        alert(popup);
 }
