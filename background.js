@@ -1,19 +1,17 @@
-// background.js
 
-// Called when the user loads on the browser action.
-//chrome.currentWindow.onLoad( "load",function(tabs) {
-    // Send a message to the active tab
-    //chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      //var activeTab = tabs[0];
-      //chrome.tabs.sendText(activeTab.id, {"text": "clicked_browser_action"});
-    //});
- // });
- chrome.browseraction.addEventListener("click",
- function(request, sender, sendResponse) {
-   if( request.message === "clicked_brower_action" ) {
-     var firstHref = $("a[href^='http']").eq(0).attr("href");
+chrome.browserAction.onClicked.addListener(function(tab) {
+  chrome.debugger.attach({tabId:popup.html}, version,
+      onAttach.bind(null, popup.html));
+});
 
-     console.log(firstHref);
-   }
- }
-);
+var version = "1.0";
+
+function onAttach(Propagandawarning) {
+  if (chrome.runtime.lastError) {
+    alert(chrome.runtime.lastError.message);
+    return;
+  }
+
+  chrome.windows.create(
+      {url: "popup.html?" + tabId, type: "popup", width: 800, height: 600});
+}
